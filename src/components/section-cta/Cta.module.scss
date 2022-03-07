@@ -65,6 +65,7 @@
       width: max-content;
       border-radius: 8px 8px 0 0;
       border-bottom: 1px solid var(--purple-light);
+      cursor: pointer;
 
       ul {
         list-style: none;
@@ -87,7 +88,7 @@
       display: flex;
       padding: 2.4rem 0;
 
-      div {
+      .fieldContainer {
         padding-left: 3.2rem;
         border-right: 2px solid var(--purple-shade);
       }

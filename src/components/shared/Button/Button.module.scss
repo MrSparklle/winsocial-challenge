@@ -2,6 +2,7 @@ button {
   padding: 0.8rem 1.6rem;
   font-weight: 600;
   border-radius: 8px;
+  cursor: pointer;
 
   &.btn-primary {
     background-color: var(--purple);

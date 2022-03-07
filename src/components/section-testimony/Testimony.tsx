@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Testimony.module.scss";
-import { ReactComponent as MiraCulos } from "../../assets/mira_culos.svg";
-import { ReactComponent as RobertoSa } from "../../assets/roberto_sa.svg";
 import { Container } from "components";
+import { Testimony as ITestimony } from "models";
 
-const Testimony = () => {
+interface Props {
+  testimonies: ITestimony[];
+}
+
+const Testimony = ({ testimonies }: Props) => {
+  const [currentTestimony, setCurrentTestimony] = useState<ITestimony>(
+    testimonies[0]
+  );
+
   return (
     <Container className={styles.testymonyContainer}>
       <h2>Depoimentos</h2>
@@ -12,18 +19,25 @@ const Testimony = () => {
         Veja o que os nossos administradores de imóveis, proprietários e
         inquilinos têm a dizer
       </p>
-      <h4>
-        “WinRent é a plataforma a qual vou quase diariamente para fazer compras
-        na 2ª casa e condomínio de férias, ou apenas para olhar casas de sonho
-        em novas áreas. Obrigado pelas divertidas compras e análises
-        comparativas, WinRent!”
-      </h4>
+      <h4>“{currentTestimony.text}”</h4>
       <span>
-        <strong>Mira Culos,</strong> Locatária
+        <strong>{currentTestimony.author},</strong> {currentTestimony.type}
       </span>
       <div className={styles.persons}>
-        <MiraCulos />
-        <RobertoSa />
+        {testimonies.length &&
+          testimonies.map((testimony) => (
+            <img
+              key={testimony.id}
+              onClick={() => setCurrentTestimony(testimony)}
+              src={
+                testimony.avatar && require(`../../assets/${testimony.avatar}`)
+              }
+              alt={testimony.author}
+            />
+          ))}
+
+        {/* <MiraCulos /> */}
+        {/* <RobertoSa /> */}
       </div>
     </Container>
   );

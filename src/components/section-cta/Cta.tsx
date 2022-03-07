@@ -1,40 +1,47 @@
-import { Button, Container, OfferCard } from "components";
+import { Autocomplete, Button, Container, OfferCard } from "components";
 import React from "react";
 import classNames from "classnames/bind";
 import styles from "./Cta.module.scss";
+import { Address } from "models";
 
-const Cta = () => {
+interface Props {
+  offers: Address[];
+}
+
+const Cta = ({ offers }: Props) => {
   const cx = classNames.bind(styles);
+
+  // Set creates a distict list of cities, countries.
+  const locations = new Set(
+    offers.map((offer) => `${offer.city}, ${offer.country}`)
+  );
 
   return (
     <Container className={styles.ctaContainer}>
-      <OfferCard
-        className={styles.offer1}
-        title="teste"
-        price={10}
-        address="teste"
-        beds={2}
-        bathrooms={1}
-        dimensions="12 x 15"
-        imageSrc="1.png"
-        width="324"
-        noDescription={true}
-      />
-      <OfferCard
-        className={styles.offer2}
-        title="teste"
-        price={10}
-        address="teste"
-        beds={2}
-        bathrooms={1}
-        dimensions="12 x 15"
-        imageSrc="2.png"
-        width="194"
-        showLike={false}
-        cardSize="small"
-        outline={true}
-        noDescription={true}
-      />
+      {offers.length && (
+        <>
+          {/* random 2 offers between 0 and 5 (only 6 first has an image) to show */}
+          <OfferCard
+            className={styles.offer1}
+            offer={offers[Math.floor(Math.random() * 6)]}
+            width="324"
+            noDescription={true}
+          />
+          <OfferCard
+            className={styles.offer2}
+            offer={
+              offers.filter((offer) => !offer.favorite)[
+                Math.floor(Math.random() * 6)
+              ]
+            }
+            width="194"
+            showLike={false}
+            cardSize="small"
+            outline={true}
+            noDescription={true}
+          />
+        </>
+      )}
 
       <h1>Compre, alugue, ou venda o seu imóvel</h1>
       <h4>
@@ -54,17 +61,17 @@ const Cta = () => {
       <div className={styles.ctaSearch}>
         <div className={styles.tabs}>
           <ul>
-            <li className={cx({ active: true })}>Alugue</li>
+            <li className={cx("active")}>Alugue</li>
             <li>Compre</li>
             <li>Venda</li>
           </ul>
         </div>
         <div className={styles.fields}>
-          <div>
+          <div className={styles.fieldContainer}>
             <label htmlFor="">Localização</label>
-            <input type="text" value="Barcelona, Spain" />
+            <Autocomplete data={[...locations]} />
           </div>
-          <div>
+          <div className={styles.fieldContainer}>
             <label htmlFor="">Quando</label>
             <input type="date" placeholder="Selecionar uma data" />
           </div>

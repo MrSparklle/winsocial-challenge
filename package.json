@@ -22,7 +22,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently --kill-others-on-fail \"npm:start:client\" \"npm:start:server\" ",
+    "start:client": "react-scripts start",
+    "start:server": "json-server --watch --port 3333 ./server/server.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -51,5 +53,9 @@
       "last 2 firefox version",
       "last 2 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "json-server": "^0.17.0"
   }
 }

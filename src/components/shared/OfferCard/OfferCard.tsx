@@ -6,40 +6,40 @@ import { ReactComponent as BedIcon } from "../../../assets/bed-icon.svg";
 import { ReactComponent as BathIcon } from "../../../assets/bath-icon.svg";
 import { ReactComponent as SizeIcon } from "../../../assets/size-icon.svg";
 import { ReactComponent as FavoriteIcon } from "../../../assets/favorite-icon.svg";
+import { Address } from "models";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
-  price: number;
-  address: string;
-  beds: number;
-  bathrooms: number;
-  dimensions: string;
-  imageSrc: string;
+  offer: Address;
   width: string;
   showLike?: boolean;
   cardSize?: "small";
   noDescription?: boolean;
   outline?: boolean;
-  popular?: boolean;
 }
 
 const OfferCard = ({
-  title,
-  price,
-  address,
-  beds,
-  bathrooms,
-  dimensions,
-  imageSrc,
+  offer,
   width,
   showLike = true,
   cardSize,
   noDescription = false,
   outline = false,
-  popular = false,
   ...props
 }: Props) => {
   const cx = classNames.bind(styles);
+
+  const {
+    id,
+    favorite,
+    size,
+    bathroom,
+    beds,
+    rental,
+    city,
+    country,
+    state,
+    avatar,
+  } = offer;
 
   return (
     <div
@@ -52,7 +52,7 @@ const OfferCard = ({
         ["--width" as string]: `${width}px`,
       }}
     >
-      {popular && (
+      {favorite && (
         <div className={styles.popular}>
           <FavoriteIcon />
           POPULAR
@@ -60,18 +60,20 @@ const OfferCard = ({
       )}
       <img
         className={cx(styles.imageContainer, cardSize)}
-        src={require(`../../../assets/offers/${imageSrc}`)}
-        alt={title}
+        src={avatar && require(`../../../assets/offers/${avatar}`)}
+        alt={city}
       />
       <div className={cx(styles.titleContainer, cardSize)}>
         <div>
-          <span>R$ {price.toFixed(2)}</span>
+          <span>R$ {rental.toFixed(2)}</span>
           <p>/mês</p>
-          <h4>{title}</h4>
+          <h4>{city}</h4>
         </div>
         {showLike && <Heart />}
       </div>
-      <div className={cx(styles.addressContainer, cardSize)}>{address}</div>
+      <div className={cx(styles.addressContainer, cardSize)}>
+        {state}, {country}
+      </div>
       <div className={cx(styles.descriptionContainer, cardSize)}>
         <div>
           <BedIcon />
@@ -84,14 +86,14 @@ const OfferCard = ({
         <div>
           <BathIcon />
           <span>
-            {bathrooms}
+            {bathroom}
             {!noDescription && " Banheiro"}
-            {!noDescription && bathrooms > 1 && "s"}
+            {!noDescription && bathroom > 1 && "s"}
           </span>
         </div>
         <div>
           <SizeIcon />
-          <span>{dimensions} m²</span>
+          <span>{size}</span>
         </div>
       </div>
     </div>

@@ -9,3 +9,4 @@ export { default as Footer } from "./section-footer/Footer";
 export { default as Button } from "./shared/Button/Button";
 export { default as OfferCard } from "./shared/OfferCard/OfferCard";
 export { default as Container } from "./shared/Container/Container";
+export { default as Autocomplete } from "./shared/Autocomplete/ Autocomplete";

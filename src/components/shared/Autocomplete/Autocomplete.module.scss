@@ -1,0 +1,42 @@
+.autocomplete {
+  position: relative;
+
+  input {
+    font-size: 1.8rem;
+    border: none;
+    margin-right: 1.6rem;
+    font-weight: 700;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .sugestions {
+    z-index: 99;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    list-style: none;
+    width: max-content;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    border: 1px solid var(--purple-shade);
+    min-width: 200px;
+    max-width: 600px;
+
+    li {
+      background-color: var(--purple-light);
+      padding: 0.8rem 1rem;
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid var(--purple-shade);
+      }
+
+      &.active {
+        background-color: var(--purple);
+        color: var(--white);
+      }
+    }
+  }
+}

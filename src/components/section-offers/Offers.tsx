@@ -1,8 +1,13 @@
 import React from "react";
 import styles from "./Offers.module.scss";
 import { Button, Container, OfferCard } from "components";
+import { Address } from "models";
 
-const Offers = () => {
+interface Props {
+  offers: Address[];
+}
+
+const Offers = ({ offers }: Props) => {
   return (
     <Container className={styles.offersContainer}>
       <div className={styles.titleContainer}>
@@ -15,72 +20,17 @@ const Offers = () => {
         <Button type="primary">Pesquisar mais propriedades</Button>
       </div>
       <div className={styles.offersListContainer}>
-        <OfferCard
-          title="teste"
-          price={10}
-          address="teste"
-          beds={2}
-          bathrooms={1}
-          dimensions="12 x 15"
-          imageSrc="1.png"
-          width="352"
-          className={styles.offerItem}
-        />
-        <OfferCard
-          title="teste"
-          price={10}
-          address="teste"
-          beds={2}
-          bathrooms={1}
-          dimensions="12 x 15"
-          imageSrc="2.png"
-          width="352"
-          className={styles.offerItem}
-        />
-        <OfferCard
-          title="teste"
-          price={10}
-          address="teste"
-          beds={2}
-          bathrooms={1}
-          dimensions="12 x 15"
-          imageSrc="3.png"
-          width="352"
-          className={styles.offerItem}
-        />
-        <OfferCard
-          title="teste"
-          price={10}
-          address="teste"
-          beds={2}
-          bathrooms={1}
-          dimensions="12 x 15"
-          imageSrc="4.png"
-          width="352"
-          className={styles.offerItem}
-        />
-        <OfferCard
-          title="teste"
-          price={10}
-          address="teste"
-          beds={2}
-          bathrooms={1}
-          dimensions="12 x 15"
-          imageSrc="5.png"
-          width="352"
-          className={styles.offerItem}
-        />
-        <OfferCard
-          title="teste"
-          price={10}
-          address="teste"
-          beds={2}
-          bathrooms={1}
-          dimensions="12 x 15"
-          imageSrc="6.png"
-          width="352"
-          className={styles.offerItem}
-        />
+        {offers.length &&
+          offers
+            .slice(0, 6)
+            .map((offer) => (
+              <OfferCard
+                key={offer.id}
+                offer={offer}
+                width="352"
+                className={styles.offerItem}
+              />
+            ))}
       </div>
     </Container>
   );

@@ -45,7 +45,9 @@
     display: flex;
     margin-top: 6.2rem;
     margin-bottom: 4.0rem;
-    svg {
+    img {
+      cursor: pointer;
+      width: 60px;
       margin-right: 3.2rem;
       &:nth-last-of-type(1) {
         margin-right: 0;

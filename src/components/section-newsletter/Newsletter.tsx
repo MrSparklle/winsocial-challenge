@@ -12,7 +12,7 @@ const Newsletter = () => {
         Spam.
       </p>
       <div className={styles.formBox}>
-        <input type="text" placeholder="Entre com o seu e-mail" />
+        <input type="email" placeholder="Entre com o seu e-mail" />
         <Button type="primary">Enviar</Button>
       </div>
       <span>

@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import classNames from "classnames/bind";
 import { ReactComponent as FacebookIcon } from "../../assets/facebook-icon.svg";
 import { ReactComponent as InstagramIcon } from "../../assets/instagram-icon.svg";
 import { ReactComponent as TwitterIcon } from "../../assets/twitter-icon.svg";
@@ -9,13 +8,11 @@ import { ReactComponent as IconLogo } from "../../assets/icon-logo.svg";
 import { Container } from "components";
 
 const Footer = () => {
-  const cx = classNames.bind(styles);
-
   return (
     <>
       <Container className={styles.footerContainer}>
         <IconLogo />
-        <div> 
+        <div>
           {/* <p> tags needs to be replaced by a proper link component */}
           <span>VENDA UMA CASA</span>
           <p>Solicitar uma oferta</p>
