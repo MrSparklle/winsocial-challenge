@@ -1,0 +1,38 @@
+.footerContainer {
+  padding: 8rem 16rem 0 16rem;
+  background-color: var(--white);
+  justify-content: space-between;
+
+  p {
+    display: block;
+    margin-top: 1.6rem;
+    color: var(--gray);
+  }
+
+  span {
+    font-weight: 700;
+    display: block;
+
+    &:not(:nth-of-type(1)) {
+      margin-top: 4.8rem;
+    }
+  }
+}
+
+.footerCopyright {
+  width: 100%;
+  padding: 3.2rem 16rem;
+  border-top: 1.5px solid var(--purple-shade);
+  margin-top: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--gray);
+  div {
+    svg  {
+      display: inline-block;
+      margin-left: 4.4rem;
+      filter: opacity(50%);
+    }
+  }
+}

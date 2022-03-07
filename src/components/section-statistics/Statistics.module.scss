@@ -1,0 +1,56 @@
+.estatisticasContainer {
+  padding: 8rem 16rem 8rem 16rem;
+  background-color: var(--white);
+
+  .box {
+    width: 100%;
+    padding: 6.4rem 0 5.6rem 6.4rem;
+    border-radius: 8px;
+    background-color: var(--purple-light);
+    border: 1.5px solid var(--purple-shade);
+    background-image: url("../../assets/home-ilustration.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    .iconContainer {
+      margin-top: 4.8rem;
+      display: flex;
+      div {
+        width: 120px;
+        margin-right: 3.2rem;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        small {
+          font-size: 1.2rem;
+          text-align: center;
+          color: var(--gray);
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 5.6rem;
+    margin-top: 3.2rem;
+    width: 50%;
+  }
+
+  h4 {
+    font-size: 2rem;
+    line-height: 3.2rem;
+    color: var(--secondary);
+    margin: 1.6rem 0 0.4rem 0;
+  }
+
+  p {
+    color: var(--gray);
+    display: block;
+    margin-top: 1.6rem;
+    width: 35%;
+  }
+
+}

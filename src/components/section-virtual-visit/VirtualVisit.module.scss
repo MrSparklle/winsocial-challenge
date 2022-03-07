@@ -1,0 +1,101 @@
+.visitaVirtualContainer {
+  padding: 10rem 11.9rem 6.4rem 16rem;
+  background-color: var(--white);
+
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    width: 544px;
+    min-width: 544px;
+
+    .floatCard {
+      display: flex;
+      width: max-content;
+      border-radius: 8px;
+      border: 1.5px solid var(--purple-shade);
+      padding: 2.4rem;
+      background-color: var(--white);
+      position: absolute;
+      box-shadow: 0px 0px 50px rgba(112, 101, 240, 0.2);
+
+      &.top {
+        top: 32px;
+        left: -112px;
+
+        svg {
+          margin-right: 2.4rem;
+        }
+      }
+
+      &.bottom {
+        bottom: -48px;
+        left: 50%;
+        transform: translate(-50%);
+        padding-right: 11.3rem;
+
+        svg {
+          position: absolute;
+          right: 32px;
+          top: -32px;
+        }
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+  .textContainer {
+    margin: auto 0;
+    padding-left: 12.2rem;
+
+    .buttonContainer {
+      align-self: flex-start;
+      border-radius: 8px;
+      border: 1.5px solid var(--purple-shade);
+      background-color: var(--purple-light);
+      padding: 0.2rem;
+      width: max-content;
+      flex-direction: row;
+
+      Button {
+        margin: 0;
+        white-space: nowrap;
+      }
+    }
+
+    Button {
+      align-self: flex-start;
+      margin-top: 3.2rem;
+    }
+  }
+
+  img {
+    border-radius: 8px;
+    max-width: 544px;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 5.6rem;
+    margin-top: 3.2rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+    line-height: 3.2rem;
+    color: var(--secondary);
+  }
+
+  p {
+    color: var(--gray);
+    display: block;
+    padding-right: 18%;
+    margin-top: 2.4rem;
+  }
+}

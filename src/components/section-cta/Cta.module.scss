@@ -1,0 +1,114 @@
+.ctaContainer {
+  background-image: url("/assets/map.png");
+  background-repeat: no-repeat;
+  background-size: 704px;
+  background-position: top right;
+  flex-direction: column;
+  padding: 7.2rem 0 6.2rem 16rem;
+  background-color: var(--purple-light);
+  position: relative;
+
+  .offer1 {
+    position: absolute;
+    right: 364px;
+    top: 88px;
+  }
+
+  .offer2 {
+    position: absolute;
+    right: 100px;
+    bottom: 56px;
+  }
+
+  h1 {
+    font-size: 6.4rem;
+    font-weight: 700;
+    width: 45%;
+    line-height: 7rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+    line-height: 3.2rem;
+    width: 45%;
+    margin-top: 3.2rem;
+  }
+
+  .ctaNumbers {
+    display: flex;
+    margin-top: 4.8rem;
+    div {
+      border-left: 2px solid var(--purple-shade);
+      padding-left: 2.4rem;
+      margin-right: 8rem;
+
+      span {
+        font-size: 3.2rem;
+        font-weight: 700;
+        line-height: 4rem;
+        color: var(--purple);
+      }
+      p {
+        color: var(--gray);
+      }
+    }
+  }
+
+  .ctaSearch {
+    margin: 5.6rem 0 5.4rem 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+
+    .tabs {
+      background-color: var(--white);
+      width: max-content;
+      border-radius: 8px 8px 0 0;
+      border-bottom: 1px solid var(--purple-light);
+
+      ul {
+        list-style: none;
+        li {
+          display: inline-block;
+          padding: 0.8rem 1.6rem;
+
+          &.active {
+            border-bottom: 2px solid var(--purple);
+            color: var(--purple);
+          }
+        }
+      }
+    }
+
+    .fields {
+      width: max-content;
+      background-color: var(--white);
+      border-radius: 0 8px 8px 8px;
+      display: flex;
+      padding: 2.4rem 0;
+
+      div {
+        padding-left: 3.2rem;
+        border-right: 2px solid var(--purple-shade);
+      }
+
+      label {
+        display: block;
+        color: var(--terciary);
+      }
+      input {
+        font-size: 1.8rem;
+        border: none;
+        margin-right: 1.6rem;
+        font-weight: 700;
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+      Button {
+        margin: 0 3.2rem;
+      }
+    }
+  }
+}

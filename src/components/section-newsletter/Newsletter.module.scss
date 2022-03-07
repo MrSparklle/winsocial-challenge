@@ -1,0 +1,65 @@
+.newsletterContainer {
+  flex-direction: column;
+  align-items: center;
+  padding: 6.4rem 6.4rem 8rem 6.4rem;
+  background-color: var(--secondary);
+
+  .formBox {
+    padding: 1.6rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    margin: 3.2rem 0 2.4rem 0;
+    
+    input {
+      border: none;
+      width: 450px;
+      line-height: 3.2rem;
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 5.6rem;
+    color: var(--white);
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    font-weight: 700;
+    color: var(--purple);
+    text-align: center;
+  }
+
+  p {
+    color: var(--white);
+    display: block;
+    margin-top: 1.6rem;
+    text-align: center;
+  }
+
+  span {
+    color: var(--gray-medium);
+    strong {
+      font-weight: 700;
+      color: var(--white);
+    }
+  }
+
+  .persons {
+    display: flex;
+    margin-top: 6.2rem;
+    margin-bottom: 4.0rem;
+    svg {
+      margin-right: 3.2rem;
+      &:nth-last-of-type(1) {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.offersCardContainer {
+  border: 1.5px solid var(--gray-light);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: var(--width);
+  position: relative;
+  background-color: var(--white);
+
+  &.outline {
+    border: 2px solid var(--white);
+    outline: 2px solid var(--purple);
+  }
+
+  .popular {
+    background-color: var(--purple);
+    color: var(--white);
+    border-radius: 8px 8px 8px 0;
+    position: absolute;
+    top: 180px;
+    left: -8px;
+    font-weight: 700;
+    padding: 0.8rem 1.6rem;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 0.8rem;
+    }
+
+    &::before {
+      content: " ";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      border-style: solid;
+      width: 8px;
+      height: 8px;
+      border-width: 0 8px 8px 0;
+      border-color: transparent var(--purple-tint) transparent transparent;
+    }
+  }
+
+  .imageContainer {
+    border-radius: 8px 8px 0 0;
+    height: 200px;
+    margin-bottom: 3.2rem;
+
+    &.small {
+      height: 120px;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  .titleContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2.4rem;
+
+    span {
+      font-weight: 800;
+      color: var(--purple);
+      display: inline-block;
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+    }
+
+    p {
+      display: inline-block;
+      margin: 0;
+    }
+    h4 {
+      margin-top: 0.4rem;
+    }
+
+    &.small {
+      margin: 0 1.6rem;
+
+      span {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+      }
+
+      h4 {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+      }
+    }
+  }
+
+  .addressContainer {
+    margin: 0.8rem 2.4rem 1.6rem 2.4rem;
+    color: var(--gray);
+
+    &.small {
+      margin: 0.8rem 1.6rem 1.2rem 1.6rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  .descriptionContainer {
+    margin: 0 2.4rem 3.2rem 2.4rem;
+    padding-top: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1.5px solid var(--purple-shade);
+
+    div {
+      display: flex;
+      align-items: center;
+      svg {
+        margin-right: 0.8rem;
+      }
+    }
+
+    &.small {
+      margin: 0 1.6rem 2.4rem 1.6rem;
+      padding-top: 1.2rem;
+
+      div {
+
+        span {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
