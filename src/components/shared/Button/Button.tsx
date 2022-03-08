@@ -3,8 +3,8 @@ import classNames from "classnames/bind";
 import styles from "./Button.module.scss";
 
 interface Props extends React.HTMLAttributes<HTMLButtonElement> {
-  type: "primary" | "secondary" | "clear";
-  active?: boolean;
+  type: "primary" | "secondary" | "clear"; // type of the button
+  active?: boolean; // is active
 }
 
 const Button = ({ children, type, active = false, ...props }: Props) => {

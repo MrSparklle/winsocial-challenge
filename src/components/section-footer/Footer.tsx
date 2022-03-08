@@ -48,12 +48,14 @@ const Footer = () => {
         </div>
       </Container>
       <footer className={styles.footerCopyright}>
-        <p>©2022 WinRent. Todos os direitos reservados.</p>
-        <div>
-          <FacebookIcon />
-          <InstagramIcon />
-          <TwitterIcon />
-          <LinkedinIcon />
+        <div className={styles.footerText}>
+          <p>©2022 WinRent. Todos os direitos reservados.</p>
+          <div>
+            <FacebookIcon />
+            <InstagramIcon />
+            <TwitterIcon />
+            <LinkedinIcon />
+          </div>
         </div>
       </footer>
     </>

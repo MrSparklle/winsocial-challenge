@@ -22,15 +22,22 @@
 
 .footerCopyright {
   width: 100%;
-  padding: 3.2rem 16rem;
   border-top: 1.5px solid var(--purple-shade);
   margin-top: 4.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: var(--gray);
+
+  .footerText {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--gray);
+    padding: 3.2rem 16rem;
+  }
+
   div {
-    svg  {
+    svg {
       display: inline-block;
       margin-left: 4.4rem;
       filter: opacity(50%);

@@ -8,6 +8,7 @@ interface Props {
 }
 
 const Testimony = ({ testimonies }: Props) => {
+  // what current testimony is displayed
   const [currentTestimony, setCurrentTestimony] = useState<ITestimony>(
     testimonies[0]
   );
@@ -25,19 +26,19 @@ const Testimony = ({ testimonies }: Props) => {
       </span>
       <div className={styles.persons}>
         {testimonies.length &&
-          testimonies.map((testimony) => (
-            <img
-              key={testimony.id}
-              onClick={() => setCurrentTestimony(testimony)}
-              src={
-                testimony.avatar && require(`../../assets/${testimony.avatar}`)
-              }
-              alt={testimony.author}
-            />
-          ))}
-
-        {/* <MiraCulos /> */}
-        {/* <RobertoSa /> */}
+          testimonies
+            .slice(0, 3)
+            .map((testimony) => (
+              <img
+                key={testimony.id}
+                onClick={() => setCurrentTestimony(testimony)}
+                src={
+                  testimony.avatar &&
+                  require(`../../assets/${testimony.avatar}`)
+                }
+                alt={testimony.author}
+              />
+            ))}
       </div>
     </Container>
   );

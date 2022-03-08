@@ -9,12 +9,12 @@ import { ReactComponent as FavoriteIcon } from "../../../assets/favorite-icon.sv
 import { Address } from "models";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  offer: Address;
-  width: string;
-  showLike?: boolean;
-  cardSize?: "small";
-  noDescription?: boolean;
-  outline?: boolean;
+  offer: Address; // a offer object contend all information about a single offer
+  width: string; // the width of the card in pixels
+  showLike?: boolean; // show the like (heart) button inside card
+  cardSize?: "small"; // option to display a standard card size (default) or a small version
+  noDescription?: boolean; // omits the beds and bathrooms descriptions
+  outline?: boolean; // display a card outline
 }
 
 const OfferCard = ({
@@ -29,7 +29,6 @@ const OfferCard = ({
   const cx = classNames.bind(styles);
 
   const {
-    id,
     favorite,
     size,
     bathroom,

@@ -16,10 +16,13 @@ import { TestimonyService } from "services/Testimony.service";
 const Home = () => {
   // all offers
   const [offers, setOffers] = useState([] as Address[]);
+  // all testimonies
   const [testimony, setTestimony] = useState([] as Testimony[]);
+  // controls if application data has been loaded
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    // fetching necessary data to display home page
     async function fetchHome() {
       try {
         // get all offers from the backend to display his data
@@ -39,15 +42,24 @@ const Home = () => {
     fetchHome();
   }, []);
 
+  // if all data has been loaded, display the home page
   return isLoaded ? (
     <>
+      {/* main navigation bar */}
       <Navbar />
+      {/* call to action section */}
       <Cta offers={offers} />
+      {/* virtual visit section */}
       <VirtualVisit />
+      {/* statistics section */}
       <Statistics />
+      {/* offers section whith top 6 offers */}
       <Offers offers={offers} />
+      {/* testimony sector, display top 3 testimonies */}
       <Testyimony testimonies={testimony} />
+      {/* newsletter section. receive emails subscriptions */}
       <Newsletter />
+      {/* footer section. sitem map and social network links */}
       <Footer />
     </>
   ) : (
